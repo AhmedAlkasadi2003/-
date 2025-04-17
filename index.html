@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="index.css">
+    <!-- Icon Font Stylesheet -->
+   
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="w-full">
+        <header class="absolute inset-x-0 top-0 z-50 bg-white ">
+            <nav aria-label="Global" class="flex items-center justify-between p-4 lg:px-8">
+             <div class="flex lg:flex-1">
+              <a class="-m-1.5 p-1.5" href="#">
+               <span class="sr-only">
+                Your Company
+               </span>
+               <a class="text-sm/6 font-semibold text-gray-900 hidden lg:block" href="#">
+              <button class="bg-[#2B1F51] p-1 flex justify-center items-center w-[120px] h-[38px] rounded-md">
+                <svg class="flex justify-center items-center title-nav" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18V16H16V2H9V0H16C16.55 0 17.021 0.196 17.413 0.588C17.805 0.98 18.0007 1.45067 18 2V16C18 16.55 17.8043 17.021 17.413 17.413C17.0217 17.805 16.5507 18.0007 16 18H9ZM7 14L5.625 12.55L8.175 10H0V8H8.175L5.625 5.45L7 4L12 9L7 14Z" fill="white"/>
+                    </svg>
+                    <p class="mr-2 text-white font-normal text-[16px] title-nav">client login</p>
+              </button>
+
+               </a>
+               <img alt="Company logo with an indigo mark" class="h-8 w-auto lg:hidden" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&amp;shade=600">              </a>
+             </div>
+             <div class="flex lg:hidden">
+              <button class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" id="openMenu" type="button">
+               <span class="sr-only title-nav ">
+                Open main menu
+               </span>
+               <svg aria-hidden="true" class="size-6" data-slot="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+               </svg>
+              </button>
+             </div>
+             <div class="hidden lg:flex lg:gap-x-7 ml-[240px]">
+              <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                Contact Us
+              </a>
+              <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                Pages
+              </a>
+              <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                Need Help?
+              </a>
+              <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                Domains
+               </a>
+               <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                ProHosting
+               </a>
+               <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                Hosting
+               </a>
+              <a class="text-sm/10  text-gray-900 title-nav font-normal" href="#">
+                Demos
+              </a>
+             </div>
+             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <div class="ml-[50px] mt-1">
+                    <div class="flex items-center space-x-2 cursor-pointer" onclick="toggleLanguage()">
+                        <span id="language" class="text-black  ml-2">EN</span>
+                        <div class="w-4 h-4 bg-gray-300 rounded-full"></div>
+
+                    </div>
+                </div>
+                <p class="text-3xl font-(family-name:--my-font) mt-[-7px] title-nav font-semibold">Logo</p>
+
+             </div>
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div aria-modal="true" class="lg:hidden hidden" id="mobileMenu" role="dialog">
+             <!-- Background backdrop, show/hide based on slide-over state. -->
+             <div class="fixed inset-0 z-50">
+             </div>
+             <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+               <a class="-m-1.5 p-1.5" href="#">
+                <span class="sr-only">
+                 Your Company
+                </span>
+                <img alt="Company logo with an indigo mark" class="h-8 w-auto lg:hidden" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&amp;shade=600"/>
+               </a>
+               <button class="-m-2.5 rounded-md p-2.5 text-gray-700" id="closeMenu" type="button">
+                <span class="sr-only">
+                 Close menu
+                </span>
+                <svg aria-hidden="true" class="size-6" data-slot="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+                 <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round">
+                 </path>
+                </svg>
+               </button>
+              </div>
+              <div class="mt-6 flow-root">
+               <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                 <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 title-nav font-normal  text-gray-900 hover:bg-gray-50" href="#">
+                  Contact Us
+                 </a>
+                 <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 title-nav font-normal text-gray-900 hover:bg-gray-50" href="#">
+                  Pages
+                 </a>
+                 <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7  title-nav font-normal text-gray-900 hover:bg-gray-50" href="#">
+                  Need Help?
+                 </a>
+                 <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 title-nav font-normal  text-gray-900 hover:bg-gray-50" href="#">
+                  Domains
+                 </a>
+                 <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 title-nav font-normal text-gray-900 hover:bg-gray-50" href="#">
+                  ProHosting
+                   </a>
+                   <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 title-nav font-normal text-gray-900 hover:bg-gray-50" href="#">
+                    Hosting
+                   </a>
+                   <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 title-nav font-normaltext-gray-900 hover:bg-gray-50" href="#">
+                    Demos
+                   </a>
+                </div>
+                <div class="py-6">
+                 <a class="-mx-3 bg-[#2B1F51] flex items-center block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 " href="#">
+                    <svg class="flex justify-center items-center" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18V16H16V2H9V0H16C16.55 0 17.021 0.196 17.413 0.588C17.805 0.98 18.0007 1.45067 18 2V16C18 16.55 17.8043 17.021 17.413 17.413C17.0217 17.805 16.5507 18.0007 16 18H9ZM7 14L5.625 12.55L8.175 10H0V8H8.175L5.625 5.45L7 4L12 9L7 14Z" fill="white"/>
+                        </svg>
+                    <p class="flex items-center justify-center text-white mr-2 font-normal">client login</p>
+                 </a>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </header>
+           <div class="w-full h-full flex flex-col items-center justify-center ">
+            <img src="./Group 19289.svg" class="img-logen w-[100%]">
+            <div class="flex-col items-center justify-center toop absolute  lg:mt-[-430px] ">
+              <p class="font-text text-white font-light flex items-center justify-center text-3xl font-semibold title">مراكز البيانات</p>
+              <p class="font-text text-white font-normal toptext lg:mt-4  ">كلام و وصف للاستضافات المشتركة كلام و وصف للاستضافات المشتركة كلام  وصف </p>
+              <p class="font-text text-white flex items-center justify-center mt-2 font-normal toptext ">كلام و   المشتركة كلام و وصف للاستضافات المشتركة </p>
+              <div class="mt-6 flex items-center justify-center gap-x-2 md:gap-x-5 button-top ">
+                <a href="#" class="border-2 border-white rounded-md px-3.5 py-2.5 text-sm font-semibold font-text text-white shadow-xs  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 butto-des">عرض الاسعار</a>
+                <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-[16px] px-3 font-semibold font-text text-[#092346] shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 butto-des2">انشاء حساب</a>
+  
+              </div>
+
+            </div>
+           
+          </div>
+          <div class="w-lg h-full flex flex-col items-center justify-center top-box">
+            <svg class="w-[100%] h-full" width="1257" height="593" viewBox="0 0 1427 593" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.71">
+              <path d="M-6.09396 91.7894L-147.23 27.5469L-6.09396 -46.2458L135.043 27.5469L-6.09396 91.7894Z" fill="#F2F6FE"/>
+              <path d="M135.043 27.5476V391.942L-6.09375 455.939V91.7886L135.043 27.5476Z" fill="url(#paint0_linear_443_2023)"/>
+              <path d="M1256.96 61.3936C1253.99 61.3915 1251.07 62.1512 1248.47 63.6004L824.171 297.021C821.189 298.63 818.705 301.027 816.991 303.953C815.277 306.879 814.398 310.219 814.452 313.611C814.448 317.002 815.375 320.33 817.132 323.23C818.889 326.129 821.408 328.49 824.414 330.055L968.278 406.464L968.728 405.621L824.864 329.211C822.011 327.727 819.62 325.486 817.952 322.734C816.285 319.981 815.404 316.823 815.408 313.604C815.357 310.385 816.19 307.214 817.817 304.437C819.444 301.66 821.802 299.384 824.633 297.857L1248.93 64.4368C1254.73 61.2517 1261.34 61.7217 1268.58 65.8372L1506.79 202.293L1507.27 201.467L1269.05 65.0097C1264.81 62.601 1260.77 61.3936 1256.96 61.3936Z" fill="url(#paint1_linear_443_2023)"/>
+              <path d="M191.328 241.551L50.1914 177.309L191.328 103.517L332.461 177.309L191.328 241.551Z" fill="#F2F6FE"/>
+              <path d="M332.465 177.309V541.704L191.328 605.701V241.551L332.465 177.309Z" fill="url(#paint2_linear_443_2023)"/>
+              <path d="M50.1914 177.309L191.328 241.551V605.698L50.1914 523.416" fill="url(#paint3_linear_443_2023)"/>
+              <path d="M1679.64 325.903H1540.89L1386.44 236.625C1366.54 225.127 1331.8 226.57 1308.83 239.846L1159.94 325.903H1021.26V344.992H1021.3C1020.74 352.774 1025.07 360.284 1034.63 365.809L1314.41 527.526C1334.3 539.024 1369.05 537.581 1392.02 524.305L1660.64 369.036C1672.58 362.138 1678.93 353.406 1679.54 344.992H1679.65L1679.64 325.903Z" fill="#F0F4FC"/>
+              <path d="M1314.69 508.737L1034.91 347.021C1015.02 335.523 1017.51 315.438 1040.48 302.162L1309.11 146.892C1332.08 133.614 1366.83 132.175 1386.72 143.671L1666.5 305.387C1686.39 316.886 1683.9 336.971 1660.92 350.247L1392.3 505.517C1369.33 518.794 1334.58 520.236 1314.69 508.737Z" fill="#FBFDFF"/>
+              <path opacity="0.8" d="M1576.4 166.388C1571.27 166.385 1566.23 167.709 1561.77 170.232L1417.42 251.917L1417.89 252.749L1562.24 171.064C1566.67 168.565 1571.68 167.282 1576.76 167.345C1581.84 167.408 1586.82 168.815 1591.19 171.422L1814 309.882C1815.7 310.9 1817.11 312.347 1818.08 314.079C1819.05 315.811 1819.55 317.766 1819.53 319.751C1819.51 321.736 1818.97 323.681 1817.96 325.392C1816.96 327.103 1815.52 328.52 1813.8 329.502L1682.07 405.094L1682.55 405.92L1814.27 330.33C1816.14 329.264 1817.69 327.728 1818.78 325.874C1819.87 324.02 1820.45 321.913 1820.48 319.762C1820.5 317.611 1819.96 315.492 1818.91 313.615C1817.86 311.738 1816.34 310.17 1814.49 309.065L1591.68 170.606C1587.06 167.842 1581.78 166.384 1576.4 166.388Z" fill="url(#paint4_linear_443_2023)"/>
+              <path d="M1475.55 285.25H1422.93L1364.35 251.386C1356.8 247.025 1343.63 247.572 1334.91 252.607L1278.45 285.245H1225.85V320.611H1225.87C1225.65 323.562 1227.3 326.41 1230.92 328.505L1337.03 389.845C1344.58 394.206 1357.75 393.66 1366.47 388.624L1468.35 329.735C1472.87 327.119 1475.28 323.807 1475.52 320.617H1475.55L1475.55 285.25Z" fill="#EFF2FD"/>
+              <path d="M1337.04 355.999L1230.94 294.67C1223.4 290.31 1224.34 282.693 1233.05 277.658L1334.93 218.774C1343.64 213.739 1356.82 213.192 1364.36 217.553L1470.46 278.881C1478.01 283.241 1477.06 290.858 1468.35 295.893L1366.48 354.778C1357.77 359.813 1344.59 360.359 1337.04 355.999Z" fill="#F5F8FD"/>
+              </g>
+              <defs>
+              <linearGradient id="paint0_linear_443_2023" x1="57.5588" y1="514.629" x2="171.664" y2="26.3309" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0"/>
+              <stop offset="1" stop-color="#E0E7FD"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_443_2023" x1="894.816" y1="338.485" x2="1140.48" y2="-147.485" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2770F7" stop-opacity="0"/>
+              <stop offset="1" stop-color="#6EE8FC"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear_443_2023" x1="254.981" y1="664.391" x2="369.086" y2="176.092" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0"/>
+              <stop offset="1" stop-color="#E0E7FD"/>
+              </linearGradient>
+              <linearGradient id="paint3_linear_443_2023" x1="139.813" y1="398.358" x2="-46.6987" y2="381.495" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0"/>
+              <stop offset="1" stop-color="#E0E7FD"/>
+              </linearGradient>
+              <linearGradient id="paint4_linear_443_2023" x1="1874.89" y1="-38.1723" x2="1428.06" y2="85.4146" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2770F7" stop-opacity="0"/>
+              <stop offset="1" stop-color="#6EE8FC"/>
+              </linearGradient>
+              </defs>
+              </svg>
+              <div class="min-h-screen py-8 px-4 dese-tit">
+                <div class="max-w-7xl mx-auto">
+                  <!-- Header -->
+                  <div class="text-center mb-3 titlbox">
+                    <h1 class="font-bold text-4xl mb-2 font-text fon-te">ارتقي عالمياً ومحلياً</h1>
+                  </div>
+                  
+                  <!-- Tabs -->
+                  <div class="flex justify-center mb-10">
+                    <div class="flex justify-center space-x-4 bg-gray-200 rounded-md p-1 w-lg max-w-md">
+                      <button id="tab-card1" class="tab-button px-4 py-2 rounded-md transition-colors bg-white shadow-sm font-text" onclick="showCard('card1')">
+                        افريقيا
+                      </button>
+                      <button id="tab-card2" class="tab-button px-4 py-2 rounded-md transition-colors bg-gray-200 font-text" onclick="showCard('card2')">
+                        اوربا
+                      </button>
+                      <button id="tab-card3" class="tab-button px-4 py-2 rounded-md transition-colors bg-gray-200 font-text" onclick="showCard('card3')">
+                        اسيا
+                      </button>
+                      <button id="tab-card4" class="tab-button px-4 py-2 rounded-md transition-colors bg-gray-200 font-text" onclick="showCard('card4')">
+                       امريكا
+                      </button>
+                     
+                     
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Cards Container -->
+                  <div class="w-full">
+                    <!-- America Cards -->
+                    <div id="card1" class="card grid grid-cols-1 mt-[-20px] md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mr-[150px]">
+                      <!-- Server Card 1 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1.svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image 2.svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">الرياض</h2>
+                              <p class="text-gray-500 text-sm font-text">السعودية</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <!-- Server Card 2 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1 (3).svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image (3).svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">محافظة</h2>
+                              <p class="text-gray-500 text-sm font-text">دولة</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51]  text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      
+                      <!-- Server Card 3 -->
+                   
+                      
+                      <!-- Server Card 4 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1 (4).svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image.svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">محافظة</h2>
+                              <p class="text-gray-500 text-sm font-text">دولة</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Asia Cards -->
+                    <div id="card2" class="card hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mr-[150px]">
+                      <!-- Server Card 1 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1.svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image 2.svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">الرياض</h2>
+                              <p class="text-gray-500 text-sm font-text">السعودية</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      
+                      <!-- Server Card 2 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1.svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image 2.svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">الرياض</h2>
+                              <p class="text-gray-500 text-sm font-text">السعودية</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      
+                      <!-- Server Card 3 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1.svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image 2.svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">الرياض</h2>
+                              <p class="text-gray-500 text-sm font-text">السعودية</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Europe Cards -->
+                    <div id="card3" class="card hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mr-[150px]">
+                      <!-- Server Card 1 -->
+                     
+                      
+                      <!-- Server Card 2 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1 (3).svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image (3).svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">محافظة</h2>
+                              <p class="text-gray-500 text-sm font-text">دولة</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <!-- Server Card 3 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1 (3).svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image (3).svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">محافظة</h2>
+                              <p class="text-gray-500 text-sm font-text">دولة</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    </div>
+                    
+                    <!-- Africa Cards -->
+                    <div id="card4" class="card hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mr-[150px]">
+                      <!-- Server Card 1 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1.svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image 2.svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">الرياض</h2>
+                              <p class="text-gray-500 text-sm font-text">السعودية</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <!-- Server Card 2 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden ">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1 (3).svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image (3).svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">محافظة</h2>
+                              <p class="text-gray-500 text-sm font-text">دولة</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51] text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <!-- Server Card 3 -->
+                      <div class="bg-white rounded-lg shadow-lg overflow-hidden ">
+                        <div class="py-4 px-1">
+                          <img src="./zxc 1 (4).svg" alt="City skyline in Africa" class="w-full h-48 object-cover rounded-md">
+                        </div>
+                        <div class="px-4 pb-4">
+                          <div class="flex items-center mb-4">
+                            <img src="./image (3).svg" alt="Flag of Saudi Arabia" class="rounded-sm" width="40" height="40">
+                            <div class="mr-3">
+                              <h2 class="text-md font-medium font-text">محافظة</h2>
+                              <p class="text-gray-500 text-sm font-text">دولة</p>
+                            </div>
+                          </div>
+                          <p class="mb-4 font-bold text-right font-text text-end">IP:</p>
+                          <button class="w-full py-2 bg-[#2B1F51]  text-white rounded-md hover:bg-purple-800 transition-colors font-text">
+                            اختبار السرعة
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="w-lg h-full flex flex-col items-center justify-center mt-[-15px] lg:mt-[-323px]">
+                <img src="./Group 22.svg" class="img-tex lg:mt-[-140px]">
+                <div class="flex-col items-center justify-center absolute toop-img md:mt-[-433px] lg:mt-[-853px] ">
+                  <p class="font-text flex items-center justify-center text-4xl font-bold title">مواقعنا</p>
+                  <p class="font-text  mt-4 toptext text-center">نحن في كل مكان الان!</p>
+                  <p class="font-text  text-3xl font-bold mt-1  text-center lg:mt-1 ">اماكن سيرفراتنا</p>
+                  
+    
+                </div> 
+               </div>
+          <div class="w-lg h-full flex flex-col items-center justify-center mt-8  ">
+            <div class="grid grid-cols-1 gri-w md:grid-cols-3 lg:grid-cols-4  gap-4">
+              <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+               <div class="pl-8 font-text">
+                <h2 class="text-md font-semibold ">
+                  الامارات  
+                 </h2>
+                <div class="text-green-500 text-sm flex mt-1">
+                
+                <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                </i>
+                </div>
+               </div>
+               <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./ae-circle-01-XS 1 (1).svg" width="60"/>
+
+              </div>
+              <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  تركيا
+                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./tr-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  برطانيا
+                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./uk-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  امريكا
+                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./us-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  فنلند
+                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./fi-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  ايطاليا                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./it-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+              <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  كوريا                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./image (2).svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  السعودية                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./sa-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  السودان                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-gray-500"> قريبا</p>
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./sd-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+               <div class="bg-white rounded-lg shadow p-3 flex items-center justify-between space-x-1 ">
+                <div class="pl-8 font-text">
+                 <h2 class="text-md font-semibold">
+                  المانيا                 </h2>
+                 <div class="text-green-500 text-sm flex mt-1">
+                
+                  <p class="text-black"> الاستجابة</p>: 20ms <i class="fas fa-circle text-xs mx-1 mt-[1px]">
+                  </i>
+                  </div>
+                </div>
+                <img alt="Flag of USA" class="w-12 h-12  items-start rounded-full" height="60" src="./de-circle-01-XS 1.svg" width="60"/>
+ 
+               </div>
+             </div>
+          </div>
+          <div class="w-lg h-full flex flex-col items-center justify-center mt-[965px] md:mt-[370px]">
+            <div class="flex-col flex items-center justify-center absolute md:mt-[-330px] lg:mt-[60px] flex-col items-center justify-center flex">
+              <p class="font-text font-light flex items-center justify-center text-3xl font-semibold title ti-sm">خدمات كبيرة تلبي احتياجات عملك</p>
+              <p class="font-text font-normal mt-4 toptext ">من خلال منتجاتنا وخدماتنا السحابية، ستجد بأننا نلبي 100٪ من احتياجات عملك والبيانات، مع أمان فائق للبنية </p>
+              <p class="font-text flex items-center justify-center mt-2 font-normal toptext ">التحتية الخاصة بك.</p>
+             
+
+              <div class="min-h-screen py-8 px-4">
+                <div class="max-w-7xl mx-auto">
+                  <!-- Header -->
+                 
+                  
+                  <!-- Region Tabs -->
+                  <div class="flex justify-center mb-10">
+                    <div class="flex justify-center space-x-4 bg-gray-200 rounded-md p-1 w-lg max-w-md">
+                      <button id="tab-america-region" class="region-tab px-4 py-2 rounded-md transition-colors bg-white shadow-sm font-text" onclick="showRegion('america-region')">
+                        خدمات سحابية
+                      </button>
+                      <button id="tab-europe-region" class="region-tab px-4 py-2 rounded-md transition-colors bg-gray-200 font-text" onclick="showRegion('europe-region')">
+                        نطاقات                      </button>
+                      <button id="tab-asia-region" class="region-tab px-4 py-2 rounded-md transition-colors bg-gray-200 font-text" onclick="showRegion('asia-region')">
+                        التصميم والتطوير                      </button>
+                     
+                    </div>
+                  </div>
+                  
+                  <!-- Regions Container -->
+                  <div class="w-full  justify-center items-center flex flex-col">
+                    <!-- America Region -->
+                    <div id="america-region" class="  justify-center items-center region-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mr-[200px] left-but ">
+                      <!-- Server Card 1 -->
+                      <div class="bg-white p-4  rounded-lg shadow-md w-[300px] md:w-[250px]">
+                        <div class=" mb-4">
+                            <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                        </div>
+                        <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                        <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                        <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                    </div>
+                    <div class="bg-white p-4  rounded-lg shadow-md w-[300px] md:w-[250px]">
+                      <div class=" mb-4">
+                          <img alt="Server icon" class="w-16 h-16" height="100" src="./download 30.svg" width="100"/>
+                      </div>
+                      <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                      <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                      <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                  </div>
+                  <div class="bg-white p-4  rounded-lg shadow-md w-[300px] md:w-[250px]">
+                    <div class=" mb-4">
+                        <img alt="Server icon" class="w-16 h-16" height="100" src="./download 31.svg" width="100"/>
+                    </div>
+                    <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                    <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                    <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                </div>
+                      
+                      <!-- Server Card 2 -->
+                      
+                      <!-- Server Card 3 -->
+                      
+                      
+                      <!-- Server Card 4 -->
+                     
+                    </div>
+                    
+                    <!-- Asia Region -->
+                    <div id="asia-region" class=" region-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  lg:mr-[200px]">
+                      <!-- Server Card 1 -->
+                      <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px]">
+                        <div class=" mb-4">
+                            <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                        </div>
+                        <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                        <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                        <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                    </div>
+                    <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px]">
+                      <div class=" mb-4">
+                          <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                      </div>
+                      <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                      <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                      <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                  </div>
+                  <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px]">
+                    <div class=" mb-4">
+                        <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                    </div>
+                    <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                    <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                    <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                </div>
+                    </div>
+                    
+                    <!-- Europe Region -->
+                    <div id="europe-region" class="justify-center items-center region-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:mr-[200px] left-but">
+                      <!-- Server Card 1 -->
+                      
+                    <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px] ">
+                      <div class=" mb-4">
+                          <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                      </div>
+                      <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                      <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                      <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                  </div>
+                  <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px] ">
+                    <div class=" mb-4">
+                        <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                    </div>
+                    <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                    <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                    <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                </div>
+                  <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px] ">
+                    <div class=" mb-4">
+                        <img alt="Server icon" class="w-16 h-16" height="100" src="./download 29.svg" width="100"/>
+                    </div>
+                    <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                    <p class="text-gray-500 mb-4 text-[12px]  font-text">استضف موقعك بسهولة وأريحية وتكلفة اقتصادية مع الاستضافة السحابية المشتركة.</p>
+                    <a class=" text-sm  font-text" href="#">اعرف المزيد</a>
+                </div>
+                
+                    </div>
+                    
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            
+          </div>
+          <div class="w-lg h-full flex flex-col items-center justify-center mt-[310px] md:mt-[30px] lg:mt-[150px] ">
+            <p class="font-text font-light flex items-center justify-center text-3xl font-semibold title ti-sm ">ما الذي يميز</p>
+            <div class="flex-col  md:mt-[25px]">
+              <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" >
+                <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px]">
+                  <div class=" mb-4">
+                      <img alt="Server icon" class="w-16 h-16" height="100" src="./security-icon 1 (1).svg" width="100"/>
+                  </div>
+                  <h2 class="text-sm font-semibold mb-2 font-text">الاستضافة السحابية المشتركة</h2>
+                  <p class="text-gray-500 mb-4 text-[12px]  font-text">قم بحماية موقعك من البرامج الضارة ومنع محاولات الاختراق وهجمات استغلال الثغرات Zero-Day وهجمات تخمين كلمة المرور Brute Force.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-lg w-[300px] md:w-[250px]">
+                <div class=" mb-4">
+                    <img alt="Server icon" class="w-16 h-16" height="100" src="./Clip path group.svg" width="100"/>
+                </div>
+                <h2 class="text-sm font-semibold mb-2 font-text">التخفيف من هجمات DDoS</h2>
+                <p class="text-gray-500 mb-4 text-[12px]  font-text">يمكن أن تتسبب هجمات حجب الخدمة الموزعة (DDoS) في التوقف التام لعملك. نحن نحظر هجمات DDoS للطبقات 3 و 4 و 7 ومع تأمين معدل نقل البيانات bandwidth أثناء الهجمات.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-lg w-[300px] md:w-[250px]">
+              <div class=" mb-4">
+                  <img alt="Server icon" class="w-16 h-16" height="100" src="./gear-icon 1.svg" width="100"/>
+              </div>
+              <h2 class="text-sm font-semibold mb-2 font-text">تحسين أداء الموقع عبر CDN</h2>
+              <p class="text-gray-500 mb-4 text-[12px]  font-text">تعمل شبكة توصيل المحتوى (CDN) الخاصة بنا على تحسين سرعة تحميل الصفحة وتقليل أحمال الخادم بنسبة 80٪ في المتوسط ​​لتحسين أداء موقعك.
+              </p>
+          </div>
+          <div class="bg-white p-4  rounded-lg shadow-lg w-[300px] md:w-[250px]">
+            <div class=" mb-4">
+                <img alt="Server icon" class="w-16 h-16" height="100" src="./growth-icon 1.svg" width="100"/>
+            </div>
+            <h2 class="text-sm font-semibold mb-2 font-text">الحماية من عمليّات الاختراق والبرامج الخبيثة</h2>
+            <p class="text-gray-500 mb-4 text-[12px]  font-text">قم بحماية موقعك من البرامج الضارة ومنع محاولات الاختراق وهجمات استغلال الثغرات Zero-Day وهجمات تخمين كلمة المرور Brute Force.</p>
+            
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg w-[300px] md:w-[250px]">
+          <div class=" mb-4">
+              <img alt="Server icon" class="w-16 h-16" height="100" src="./ease-to-use-icon 1.svg" width="100"/>
+          </div>
+          <h2 class="text-sm font-semibold mb-2 font-text">التخفيف من هجمات DDoS</h2>
+          <p class="text-gray-500 mb-4 text-[12px]  font-text">يمكن أن تتسبب هجمات حجب الخدمة الموزعة (DDoS) في التوقف التام لعملك. نحن نحظر هجمات DDoS للطبقات 3 و 4 و 7 ومع تأمين معدل نقل البيانات bandwidth أثناء الهجمات.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg w-[300px] md:w-[250px]">
+        <div class=" mb-4">
+            <img alt="Server icon" class="w-16 h-16" height="100" src="./visitors-icon 1.svg" width="100"/>
+        </div>
+        <h2 class="text-sm font-semibold mb-2 font-text">تحسين أداء الموقع عبر CDN</h2>
+        <p class="text-gray-500 mb-4 text-[12px]  font-text">تعمل شبكة توصيل المحتوى (CDN) الخاصة بنا على تحسين سرعة تحميل الصفحة وتقليل أحمال الخادم بنسبة 80٪ في المتوسط ​​لتحسين أداء موقعك.
+        </p>
+    </div>
+              </div>
+             
+            </div>
+           
+          </div>
+          <div class="w-lg h-full flex  items-center justify-center mt-[0px] ds "> 
+            <div class=" mt-[60px] dis-bu md:flex mt-[-10px] lg:flex-col">
+              <div class="bg-white p-4  rounded-lg shadow-md w flex flex-col justify-center items-center w-[300px] m-2 md:w-[250px] py-2 m-2">
+              <img src="./faq-icon 1.svg">
+              <p class="mt-4 font-text ">الأسئلة الشائعة</p>
+
+              </div>
+              <div class="bg-white p-4  rounded-lg shadow-md w flex flex-col justify-center items-center w-[300px] m-2 md:w-[250px] py-2 m-2">
+                <img src="./faq-icon 1.svg">
+                <p class="mt-4 font-text">الأسئلة الشائعة</p>
+  
+                </div>
+            </div>
+            <div class="accordion-multiple mt-1 bg-white p-4  rounded-sm shadow-md h-[385px] mt-[57px] box">
+            
+            <div class=" bg-white  mb-4 font-text">
+              <div class="accordion-header  text-gray-800 p-4 cursor-pointer flex justify-between items-center  text-lg" onclick="toggleAccordion(this)">
+                <span>ما هو المُخدّم الافتراضي المخصص (VPS)؟</span>
+                <span class="accordion-icon text-2xl">+</span>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-content-inner p-4 text-gray-500 sm">
+                  الأكورديون هو عنصر واجهة مستخدم يسمح بعرض وإخفاء المحتوى بطريقة منظمة. يساعد على توفير المساحة وتنظيم المعلومات.
+                </div>
+              </div>
+            </div>
+            
+            <div class=" mb-4">
+              <div class="accordion-header font-text text-gray-800 p-4 cursor-pointer flex justify-between items-center  text-lg" onclick="toggleAccordion(this)">
+                <span>ما الفرق بين المُخدّم الافتراضي والمُخدّم المخصص؟</span>
+                <span class="accordion-icon text-2xl">+</span>
+              </div>
+              <div class="accordion-content ">
+                <div class="accordion-content-inner p-4 font-text text-gray-500">
+                  يمكنك تخصيص هذا العنصر بتغيير الألوان والأحجام في CSS. يمكنك أيضاً تعديل الرمز لاستخدام أيقونات مختلفة أو إضافة تأثيرات انتقالية.
+                </div>
+              </div>
+            </div>
+            
+            <div class=" mb-4">
+              <div class="accordion-header font-text text-gray-800 p-4 cursor-pointer flex justify-between items-center text-lg" onclick="toggleAccordion(this)">
+                <span>ماهي المواقع المتاحة لاستضافة VPS؟</span>
+                <span class="accordion-icon text-2xl">+</span>
+              </div>
+              <div class="accordion-content font-text">
+                <div class="accordion-content-inner text-gray-500 p-4">
+                  نعم، هذا التصميم متجاوب ويعمل بشكل جيد على أجهزة الموبايل والأجهزة اللوحية أيضاً.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-lg h-full flex flex-col items-center justify-center md:mt-[40px] soo soom">
+          <p class="font-text font-light flex items-center justify-center text-3xl font-semibold title ti-sm">خدمات كبيرة تلبي احتياجات عملك</p>
+          <p class="font-text font-normal mt-4 toptext ">من خلال منتجاتنا وخدماتنا السحابية، ستجد بأننا نلبي 100٪ من احتياجات عملك والبيانات، مع أمان فائق للبنية </p>
+          <div class="container mx-auto py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-8 lg:grid-cols-3 gap-6">
+             <div class="bg-white text-black rounded-lg shadow-md p-6 flex flex-col items-center">
+              <img alt="صورة تروس زرقاء" class="mb-4" height="100" src="./privacy-protection 1.svg" width="50"/>
+              <p class="text-center font-text text-sm">
+                كشف وإزالة البرمجيّات الخبيثة             
+               </p>
+             </div>
+             <div class="bg-white text-black rounded-lg shadow-md p-6 flex flex-col items-center">
+              <img alt="صورة سحابة مع علامة صح" class="mb-4" height="100" src="./Group.svg" width="80"/>
+              <p class="text-center font-text text-sm">
+               التخفيف من هجمات DDoS
+              </p>
+             </div>
+             <div class="bg-white text-black rounded-lg shadow-md p-6 flex flex-col items-center">
+              <img alt="صورة درع مع علامة صح" class="mb-4" height="100" src="./control 1.svg" width="100"/>
+              <p class="text-center font-text text-sm">
+                العمل عبر منصات متعددة 
+              </p>
+             </div>
+             <div class="bg-white text-black rounded-lg shadow-md p-6 flex flex-col items-center">
+              <img alt="صورة شهادة حماية SSL" class="mb-4" height="100" src="./Group 3623.svg" width="85"/>
+              <p class="text-center font-text text-sm">
+                تحسين الأداء       
+              </p>
+             </div>
+             <div class="bg-white text-black rounded-lg shadow-md p-6 flex flex-col items-center">
+              <img alt="صورة شاشة مع قفل" class="mb-4" height="100" src="./Group (1).svg" width="85"/>
+              <p class="text-center font-text text-sm">
+               المراقبة الأمنية
+              </p>
+             </div>
+             <div class="bg-white text-black rounded-lg shadow-md p-6 flex flex-col items-center">
+              <img alt="صورة عداد السرعة" class="mb-4" height="100" src="./ssl 1.svg" width="100"/>
+              <p class="text-center font-text text-sm">
+                شهادة الحماية SSL
+               </p>
+             </div>
+            </div>
+           </div>
+        </div>
+      </div>
+          </div>
+         
+          </div>
+          
+    </div>
+ 
+  
+   
+  
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./index.js"></script>
+       
+
+
+
+</body>
+</html>
